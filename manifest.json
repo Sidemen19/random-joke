@@ -1,0 +1,7 @@
+{
+  "name": "Random Joke",
+  "description": "Gets a random dad-joke and sends it in the chat.",
+  "author": "lav#5778",
+  "version": "1.0.0",
+  "license": "MIT"
+}
