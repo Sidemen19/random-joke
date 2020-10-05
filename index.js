@@ -6,18 +6,19 @@ class RandomJoke extends Plugin {
         powercord.api.commands.registerCommand({
             command: 'joke',
             aliases: ['dadjoke'],
-            usage: '{c}',
-            executor: () => {
-                return this.getJoke();
+            usage: '{c} [--send]',
+            executor: (args) => {
+                return this.getJoke(args);
             }
         })
     }
 
-    async getJoke() {
+    async getJoke(args) {
         const { body } = await get('https://official-joke-api.appspot.com/jokes/random');
         if (!body) return { result: 'Error occurred while getting joke :(' };
 
         return {
+            send: args.includes('--send'),
             result: `> ${body.setup}\n\n${body.punchline}`
         }
     }
