@@ -7,7 +7,7 @@ class RandomJoke extends Plugin {
             command: 'joke',
             aliases: ['dadjoke'],
             usage: '{c} [--send]',
-            executor: (args) => this.getJoke(args)
+            executor: args => this.getJoke(args)
         })
     }
 
